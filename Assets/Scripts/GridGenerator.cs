@@ -20,7 +20,7 @@ public class GridGenerator : MonoBehaviour
         GenerateGrid(noiseOffsetX, noiseOffsetY);
     }
 
-    void GenerateGrid(float offsetX, float offsetY) //might need to re-write this to keep track of tile coordinates
+    void GenerateGrid(float offsetX, float offsetY) //might need to re-write this to keep track of tile coordinates better
     {
         GameObject gridParent = new GameObject("HexGrid");
 

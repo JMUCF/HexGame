@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d5c8f6e9d3c9f428d10d723b74ded5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWalkable: 0
+  isWalkable: 1
+  isHill: 1
   coordinates: {x: 0, y: 0}
 --- !u!54 &4092773631917088863
 Rigidbody:

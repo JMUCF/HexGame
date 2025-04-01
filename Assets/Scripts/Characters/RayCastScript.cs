@@ -5,6 +5,9 @@ using UnityEngine;
 public class RayCastScript : MonoBehaviour
 {
     Camera cam;
+    CharController characterController;
+    TileData selectedTile;
+
     void Start()
     {
         cam = Camera.main;
@@ -29,10 +32,26 @@ public class RayCastScript : MonoBehaviour
                 {
                     selectedObject = selectedObject.parent;
                 }
+                selectedTile = selectedObject.GetComponent<TileData>();
 
-                Debug.Log(selectedObject.name);
+                if (characterController != null && characterController.waitingForMove == true)
+                {
+                    if(selectedTile.isWalkable == true)
+                    {
+                        characterController.Move(selectedTile);
+                    }
+                }
+
+                characterController = selectedObject.GetComponent<CharController>();
+                if (characterController != null)
+                {
+                    characterController.ShowUI();
+                }
+                else
+                {
+                    Debug.Log("Non-character: " + selectedObject.name);
+                }
             }
-
             else
                 Debug.Log("uhh");
         }

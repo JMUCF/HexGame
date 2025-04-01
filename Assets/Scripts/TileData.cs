@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TileData : MonoBehaviour
 {
-    [SerializeField] private bool isWalkable;
-    [SerializeField] private Vector2Int coordinates;
+    [SerializeField] public bool isWalkable;
+    [SerializeField] public bool isHill;
+    [SerializeField] private Vector2Int coordinates; //saving this as xy for stuff like game events. ex: SpawnTowerAt(x, y) then inside function find the transform of those coords
 
     public void SetCoordinates(Vector2Int coords)
     {
